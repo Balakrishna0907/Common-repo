@@ -18,7 +18,7 @@ int main()
     do
     {
         cout<<"Enter your Name: "<<endl;
-        cin.ignore(numeric_limits<streamsize>::max(),'\n'); //to clear input buffer
+        cin.ignore(10000,'\n'); //to clear input buffer
         cin.getline(v[i].name,50);
         cout<<"Enter your VoterID: "<<endl;
         cin.getline(v[i].voterid,20);
