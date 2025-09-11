@@ -13,12 +13,11 @@ struct voter
 int main()
 {
     char op;
-    int i;
+    int i=0;
     struct voter;
     do
     {
         cout<<"Enter your Name: "<<endl;
-        cin.ignore(10000,'\n'); //to clear input buffer
         cin.getline(v[i].name,50);
         cout<<"Enter your VoterID: "<<endl;
         cin.getline(v[i].voterid,20);
@@ -26,6 +25,7 @@ int main()
         cin>>v[i].age;
         cout<<"Enter your Gender (M/F/O): "<<endl;
         cin>>v[i].gender;
+        cin.ignore(10000,'\n'); //to clear input buffer
         if(v[i].age>=18) //age verification
         {
             ofstream file("VoterDetails-presentation",ios::app); //initialising a file & appending datas to it
