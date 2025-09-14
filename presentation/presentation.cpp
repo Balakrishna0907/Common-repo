@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream> //for file formatting
-#include <limits> //for limiting the input buffer
 using namespace std;
 
 struct voter
