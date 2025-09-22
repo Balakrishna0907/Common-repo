@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Student Sign Up Page</title>
+        <h2 style="text-decoration: underline; text-align: center;">Sing Up</h2>
+    </header>
+    <body>
+        <section>
+            <form style="text-align: center;">
+
+                <label>Name : </label>
+                <input type="text" pattern="[A-Za-z]+" maxlength="25" title="Name should not have integers and maximum 25 characters" placeholder="Enter Your Name" required><br><br>
+
+                <label>Email Id : </label>
+                <input type="email" placeholder="Enter Your Email Id" required><br><br>
+
+                <label>Password : </label>
+                <input type="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required><br><br>
+
+                <label>Confirm Password : </label>
+                <input type="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password Again" required><br><br>
+                
+                <label>Mobile Number : </label>
+                <input type="text" pattern="[0-9]{10}" title="Enter 10 Digit" placeholder="Enter Mobile Number" required><br><br>
+                <label>Age : </label>
+                <input type="number" min="10" max="100" required><br><br>
+
+                <label>Gender : </label>
+                <select>
+                    <option value="">-SELECT-</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select><br><br>
+
+                <button type="submit" style="background-color: #4CAF50;">Sign In</button>
+
+            </form>
+        </section>
+    </body>
+</html>
