@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Student Sign Up Page</title>
-        <h2 style="text-decoration: underline; text-align: center;">Sing Up</h2>
-    </header>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
     <body>
+        <header>
+            <h2 style="text-decoration: underline; text-align: center;">Sing Up</h2>
+        </header>
         <section>
-            <form style="text-align: center;">
+            <form>
 
                 <label>Name : </label>
                 <input type="text" pattern="[A-Za-z]+" maxlength="25" title="Name should not have integers and maximum 25 characters" placeholder="Enter Your Name" required><br><br>
@@ -33,7 +39,7 @@
                     <option value="Others">Others</option>
                 </select><br><br>
 
-                <button type="submit" style="background-color: #4CAF50;">Sign In</button>
+                <button type="submit">Sign In</button>
 
             </form>
         </section>
