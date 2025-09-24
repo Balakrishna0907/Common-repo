@@ -12,19 +12,19 @@
             <h2 style="text-decoration: underline; text-align: center;">Sing Up</h2>
         </header>
         <section>
-            <form>
+            <form id="signupform">
 
                 <label>Name : </label>
                 <input type="text" pattern="[A-Za-z]+" maxlength="25" title="Name should not have integers and maximum 25 characters" placeholder="Enter Your Name" required><br><br>
 
                 <label>Email Id : </label>
-                <input type="email" placeholder="Enter Your Email Id" required><br><br>
+                <input type="email" id="signupemail" placeholder="Enter Your Email Id" required><br><br>
 
                 <label>Password : </label>
-                <input type="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required><br><br>
+                <input type="password" id="signuppassword" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required><br><br>
 
                 <label>Confirm Password : </label>
-                <input type="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password Again" required><br><br>
+                <input type="password" id="signupconfirm" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password Again" required><br><br>
                 
                 <label>Mobile Number : </label>
                 <input type="text" pattern="[0-9]{10}" title="Enter 10 Digit" placeholder="Enter Mobile Number" required><br><br>
@@ -44,4 +44,7 @@
             </form>
         </section>
     </body>
+    
+    <p id="signupmsg" style="color: red; text-align: center;"></p>
+    <script src="assets/script.js"></script>
 </html>
