@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Log In Page</title>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body>
+        <header>
+            <h2 style="text-decoration: underline; text-align: center;">Log In</h2>
+        </header>
+        <section>
+            <form style="text-align: center;">
+
+                <label>Mail Id : </label>
+                <input type="email" placeholder="Enter Your Mail Id" required><br><br>
+
+                <label>Password : </label>
+                <input type="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required><br><br>
+
+                <button type="submit">Log In</button>
+
+            </form>
+        </section>
+    </body>
+</html>
