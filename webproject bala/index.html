@@ -3,23 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Student Portal</title>
+        <title>Student Log In Page</title>
         <link rel="stylesheet" href="assets/style.css">
     </head>
     <body>
         <header>
-            <h1 style="text-align: center;">Student Portal</h1>
+            <h2 style="text-decoration: underline; text-align: center;">Log In</h2>
         </header>
         <section>
-        
-            <a href="login.html">Log In</a>
-            <a href="signup.html">Sign In</a>  
-            
+            <form id="loginform" action="/loginsubmit" method="post">
+
+                <label>Mail Id : </label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Mail Id" required><br><br>
+
+                <label>Password : </label>
+                <input type="password" id="password" name="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required><br><br>
+
+                <button type="submit">Log In</button>
+
+            </form>
         </section>
     </body>
-    <footer>
-        <p style="text-align: center;">Webpage by Balakrishna</p>
-    </footer>
 
+    <P id="loginmsg" style="color: red; text-align: center;"></P>
     <script src="assets/script.js"></script>
 </html>
