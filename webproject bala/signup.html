@@ -3,48 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Student Sign Up Page</title>
-        <link rel="stylesheet" href="assets/style.css">
+        <title>Student Log In Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
-
     <body>
         <header>
-            <h2 style="text-decoration: underline; text-align: center;">Sing Up</h2>
+            <h2 style="text-decoration: underline; text-align: center;">Log In</h2>
         </header>
         <section>
-            <form id="signupform" action="/signupsubmit" method="post">
+            <form id="loginform" action="/login_submit" method="post">
 
-                <label>Name : </label>
-                <input type="text" pattern="[A-Za-z]+" maxlength="25" title="Name should not have integers and maximum 25 characters" placeholder="Enter Your Name" required><br><br>
+                <label for="email">Mail Id : </label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Mail Id" required><br><br>
 
-                <label>Email Id : </label>
-                <input type="email" id="signupemail" placeholder="Enter Your Email Id" required><br><br>
+                <label for="password">Password : </label>
+                <input type="password" id="password" name="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required><br><br>
 
-                <label>Password : </label>
-                <input type="password" id="signuppassword" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required><br><br>
-
-                <label>Confirm Password : </label>
-                <input type="password" id="signupconfirm" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password Again" required><br><br>
-                
-                <label>Mobile Number : </label>
-                <input type="text" pattern="[0-9]{10}" title="Enter 10 Digit" placeholder="Enter Mobile Number" required><br><br>
-                <label>Age : </label>
-                <input type="number" min="10" max="100" required><br><br>
-
-                <label>Gender : </label>
-                <select>
-                    <option value="">-SELECT-</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Others">Others</option>
-                </select><br><br>
-
-                <button type="submit">Sign In</button>
+                <button type="submit">Log In</button>
 
             </form>
         </section>
     </body>
-    
-    <p id="signupmsg" style="color: red; text-align: center;"></p>
-    <script src="assets/script.js"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <script src="static/script.js" defer></script>
 </html>
