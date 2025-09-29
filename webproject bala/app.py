@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import sqlite3
 
 app = Flask(__name__)
 
@@ -37,8 +38,18 @@ def signup_submit():
     name = request.form.get('signupname')
     email = request.form.get('signupemail')
     password = request.form.get('signuppassword')
+    mobile = request.form.get('mobileno')
+    age = request.form.get('age')
+    gender = request.form.get('gender')
 
     return f"<h2>Signup Successful!</h2><p>Name: {name}</p><p>Email: {email}</p><p>Password: {password}</p>"
+    conn = sqlite3.connect("signup.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+CREATE TABLE IF NOT EXISTS student (
+    name TEXT )
+""")
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False, host="192.168.17.145", port="5000")
