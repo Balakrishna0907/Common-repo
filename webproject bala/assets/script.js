@@ -4,7 +4,6 @@ if (loginform) {
     let loginmsg = document.getElementById("loginmsg");
 
 loginform.addEventListener("submit",function(event) {
-    event.preventDefault();
     alert("Form is submitted");
 
     let email = document.getElementById("email").value;
@@ -22,13 +21,11 @@ loginform.addEventListener("submit",function(event) {
 }
 
 //signup part
-//login part
 let signupform = document.getElementById("signupform");
 if (signupform) {
     let signupmsg = document.getElementById("signupmsg");
 
     signupform.addEventListener("submit", function(event) {
-        event.preventDefault();
         alert("Form is submitted");
     let email = document.getElementById("signupemail").value;
     let password = document.getElementById("signuppassword").value;
