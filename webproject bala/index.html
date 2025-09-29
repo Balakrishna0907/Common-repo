@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Student Portal</title>
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
         <header>
@@ -12,8 +12,8 @@
         </header>
         <section>
         
-            <a href="login.html">Log In</a>
-            <a href="signup.html">Sign In</a>  
+            <a href="/login">Log In</a>
+            <a href="/signup">Sign In</a>  
             
         </section>
     </body>
@@ -21,5 +21,5 @@
         <p style="text-align: center;">Webpage by Balakrishna</p>
     </footer>
 
-    <script src="assets/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </html>
