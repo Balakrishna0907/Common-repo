@@ -4,60 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Register - SBV College</title>
-<link rel="stylesheet" href="style.css">
 <style>
-    body {
-        background: linear-gradient(135deg, #ff66b2, #4a90e2);
-        font-family: Arial;
-    }
-    .form-container {
-        max-width: 350px;
-        margin: 100px auto;
-        padding: 30px;
-        background: white;
-        border-radius: 12px;
-        text-align: center;
-    }
-    input {
-        width: 90%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-    }
-    .btn {
-        padding: 10px 20px;
-        margin-top: 15px;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        width: 95%;
-        color: white;
-    }
-    .register-btn { background: #ff66b2; }
+body {
+    background: linear-gradient(135deg, #ff66b2, #4a90e2);
+    font-family: Arial, sans-serif;
+}
 
-    .switch-text {
-        margin-top: 15px;
-        font-size: 14px;
-    }
-    .switch-text a {
-        color: #4a90e2;
-        text-decoration: none;
-        font-weight: bold;
-    }
+.form-container {
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input, select {
+    width: 95%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 95%;
+    color: white;
+    margin: 10px auto 0 auto;
+    display: block;
+}
+
+.register-btn { background: #ff66b2; }
+.register-btn:hover { background: #fd2390; }
+
+.switch-text {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.switch-text a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-text a:hover { color: #026eeb; }
 </style>
 </head>
 <body>
-<div class="form-container">
-    <h2>Register</h2>
-    <input type="text" placeholder="Email"><br>
-    <input type="text" placeholder="Date of Birth"><br>
-    <input type="text" placeholder="Contact Number"><br>
-    <a href="login.html" class="btn register-btn">Register</a>
-    <div class="switch-text">
-        Already have an account? <a href="login.html">Login</a>
+<form action="login.html">
+    <div class="form-container">
+        <h2>Register</h2>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter Your Email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact">Contact Number</label>
+            <input type="text" id="contact" placeholder="Enter Your Contact Number" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" min="10" max="100" placeholder="Enter Your Age" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+                <option value="">-SELECT-</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn register-btn">Register</button>
+        
+        <div class="switch-text">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
     </div>
-</div>
+</form>
 </body>
 </html>
