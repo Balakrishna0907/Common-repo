@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - SBV College</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+    .main-content {
+        margin-left: 220px;
+        padding: 30px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        text-align: center;
+    }
+    th {
+        background: linear-gradient(90deg, #ff66b2, #4a90e2);
+        color: white;
+    }
+    tr:nth-child(even) { background: #f9f9f9; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>SBV College</h2>
+    <a href="profile.html">Profile</a>
+    <a href="academic.html">Academic</a>
+    <a href="hostel.html">Hostel</a>
+    <a href="finance.html">Finance</a>
+</div>
+
+<div class="main-content">
+    <h2>Profile Info</h2>
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Contact</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>{{ user[5] }}</td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>

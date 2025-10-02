@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SBV College</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background: linear-gradient(135deg, #4a90e2, #ff66b2);
+      font-family: Arial, sans-serif;
+    }
+    .form-container {
+      max-width: 350px;
+      margin: 100px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      text-decoration: underline;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+    font-weight: bold;
+    text-align: left;
+    }
+    input {
+      width: 95%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      display: block;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 95%;
+      color: white;
+      margin: 10px auto 0 auto;
+      display: block;
+      background: #4a90e2;
+    }
+    .btn:hover { background: #026eeb; }
+    .switch-text {
+      margin-top: 15px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .switch-text a {
+      color: #ff66b2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .switch-text a:hover { color: #fd2390; }
+  </style>
+</head>
+<body>
+  <form action="/login" method="POST">
+    <div class="form-container">
+      <h2>Login</h2>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="switch-text">
+        Don’t have an account? <a href="/register">Register</a>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
