@@ -4,59 +4,112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login - SBV College</title>
-<link rel="stylesheet" href="style.css">
 <style>
-    body {
-        background: linear-gradient(135deg, #ff66b2, #4a90e2);
-        font-family: Arial;
-    }
-    .form-container {
-        max-width: 350px;
-        margin: 150px auto;
-        padding: 30px;
-        background: white;
-        border-radius: 12px;
-        text-align: center;
-    }
-    input {
-        width: 90%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-    }
-    .btn {
-        padding: 10px 20px;
-        margin-top: 15px;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        width: 95%;
-        color: white;
-    }
-    .login-btn { background: #4a90e2; }
+body {
+    background: linear-gradient(135deg, #ff66b2, #4a90e2);
+    font-family: Arial, sans-serif;
+}
 
-    .switch-text {
-        margin-top: 15px;
-        font-size: 14px;
-    }
-    .switch-text a {
-        color: #ff66b2;
-        text-decoration: none;
-        font-weight: bold;
-    }
+.form-container {
+    max-width: 350px;
+    margin: 150px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 95%;
+    color: white;
+    margin: 10px auto 0 auto;
+    display: block;
+}
+
+.login-btn {
+    background: #4a90e2;
+}
+
+.login-btn:hover {
+    background: #026eeb;
+}
+
+.switch-text {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.switch-text a {
+    color: #ff66b2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-text a:hover {
+    color: #fd2390;
+}
 </style>
 </head>
 <body>
-<div class="form-container">
-    <h2>Login</h2>
-    <input type="text" placeholder="Email"><br>
-    <input type="password" placeholder="Password"><br>
-    <a href="profile.html" class="btn login-btn">Login</a>
-    <div class="switch-text">
-        Haven’t registered yet? <a href="register.html">Register</a>
+
+<form action="profile.html">
+    <div class="form-container">
+        <h2>Log in</h2>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="lemail" id="email" placeholder="Enter Your Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="lpassword" id="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required>
+        </div>
+
+        <button class="btn login-btn" type="submit">Login</button>
+
+        <div class="switch-text" class="form-group">
+            Haven’t registered yet? <a href="register.html">Register</a>
+        </div>
     </div>
-</div>
+</form>
+
 </body>
 </html>
