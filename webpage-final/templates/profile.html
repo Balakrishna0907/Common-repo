@@ -34,10 +34,10 @@
 
 <div class="sidebar">
     <h2>SBV College</h2>
-    <a href="profile.html">Profile</a>
-    <a href="academic.html">Academic</a>
-    <a href="hostel.html">Hostel</a>
-    <a href="finance.html">Finance</a>
+    <a href="{{ url_for('profile', email=user[2]) }}">Profile</a>
+    <a href="{{ url_for('academic', email=user[2]) }}">Academic</a>
+    <a href="{{ url_for('hostel', email=user[2]) }}">Hostel</a>
+    <a href="{{ url_for('finance', email=user[2]) }}">Finance</a>
 </div>
 
 <div class="main-content">
@@ -45,6 +45,7 @@
     <table>
         <tr>
             <th>Student ID</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Date of Birth</th>
             <th>Contact</th>
@@ -58,6 +59,7 @@
             <td>{{ user[3] }}</td>
             <td>{{ user[4] }}</td>
             <td>{{ user[5] }}</td>
+            <td>{{ user[6] }}</td>
         </tr>
     </table>
 </div>
