@@ -34,17 +34,17 @@
 
 <div class="sidebar">
     <h2>SBV College</h2>
-    <a href="profile.html">Profile</a>
-    <a href="academic.html">Academic</a>
-    <a href="hostel.html">Hostel</a>
-    <a href="finance.html">Finance</a>
+    <a href="{{ url_for('profile', email=user[2]) }}">Profile</a>
+    <a href="{{ url_for('academic', email=user[2]) }}">Academic</a>
+    <a href="{{ url_for('hostel', email=user[2]) }}">Hostel</a>
+    <a href="{{ url_for('finance', email=user[2]) }}">Finance</a>
 </div>
 
 <div class="main-content">
     <h2>Hostel Info</h2>
     <table>
         <tr><th>Student ID</th><th>Name</th><th>Year & Course</th><th>Contact</th><th>Hostel</th><th>Room</th><th>Veg/Non-Veg</th><th>Parent Contact</th></tr>
-        <tr><td>001</td><td>John Doe</td><td>1 BSc CS</td><td>1234567890</td><td>Maple Hostel</td><td>101</td><td>Veg</td><td>9876543210</td></tr>
+        <tr><td>{{user[0]}}</td><td>{{user[1]}}</td><td>1 BSc CS</td><td>{{user[4]}}</td><td>Maple Hostel</td><td>101</td><td>Veg</td><td>9876543210</td></tr>
     </table>
 </div>
 
