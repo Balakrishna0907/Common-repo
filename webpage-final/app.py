@@ -11,7 +11,8 @@ def init_db():
     c = conn.cursor()
     c.execute('''
         CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT, 
+            name TEXT NOT NULL,
             email TEXT UNIQUE NOT NULL,
             password TEXT NOT NULL,
             dob TEXT NOT NULL,
@@ -34,6 +35,7 @@ def index():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        name = request.form["name"]
         email = request.form["email"]
         password = request.form["password"]
         dob = request.form["dob"]
@@ -44,8 +46,8 @@ def register():
         conn = sqlite3.connect(DB_NAME)
         c = conn.cursor()
         try:
-            c.execute("INSERT INTO users (email, password, dob, contact, age, gender) VALUES (?, ?, ?, ?, ?, ?)",
-                      (email, password, dob, contact, age, gender))
+            c.execute("INSERT INTO users (name, email, password, dob, contact, age, gender) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                      (name, email, password, dob, contact, age, gender))
             conn.commit()
         except sqlite3.IntegrityError:
             conn.close()
@@ -68,46 +70,10 @@ def login():
         conn.close()
 
         if user:
-            # Redirect to profile (no sessions)
             return redirect(url_for("profile", email=email))
         else:
-            return "Invalid email or password! If you dont have an account Register first"
+            return "Invalid email or password! If you dont have an account Register first!"
     return render_template("login.html")
-
-'''@app.route("/profile_dis")
-def profile_dis():
-    email = request.args.get("email")
-    if not email:
-        return "No user specified!"
-
-    conn = sqlite3.connect(DB_NAME)
-    c = conn.cursor()
-    c.execute("SELECT id, email, dob, contact, age, gender FROM users WHERE email=?", (email,))
-    user = c.fetchone()
-    conn.close()
-
-    if not user:
-        return "User not found!"
-
-    html = f"""
-    <h2>Profile Info</h2>
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>ID</th><th>Email</th><th>DOB</th><th>Contact</th><th>Age</th><th>Gender</th>
-        </tr>
-        <tr>
-            <td>{user[0]}</td>
-            <td>{user[1]}</td>
-            <td>{user[2]}</td>
-            <td>{user[3]}</td>
-            <td>{user[4]}</td>
-            <td>{user[5]}</td>
-        </tr>
-    </table>
-    <br>
-    <a href="/">Back to Home</a>
-    """
-    return html//'''
 
 @app.route("/profile")
 def profile():
@@ -117,29 +83,64 @@ def profile():
 
     conn = sqlite3.connect(DB_NAME)
     c = conn.cursor()
-    c.execute("SELECT id, email, dob, contact, age, gender FROM users WHERE email=?", (email,))
+    c.execute("SELECT id, name, email, dob, contact, age, gender FROM users WHERE email=?", (email, ))
     user = c.fetchone()
     conn.close()
 
     if not user:
         return "User not found!"
-
-    # Pass the user to template as 'users' to match your HTML
     return render_template("profile.html", user=user)
 
 
 # Static pages
 @app.route("/academic")
 def academic():
-    return render_template("academic.html")
+    email = request.args.get("email")
+    if not email:
+        return "No user specified!"
+
+    conn = sqlite3.connect(DB_NAME)
+    c = conn.cursor()
+    c.execute("SELECT id, name, email, dob, contact, age, gender FROM users WHERE email=?", (email,))
+    user = c.fetchone()
+    conn.close()
+
+    if not user:
+        return "User not found!"
+    return render_template("academic.html", user=user)
+
 
 @app.route("/hostel")
 def hostel():
-    return render_template("hostel.html")
+    email = request.args.get("email")
+    if not email:
+        return "No user specified!"
+
+    conn = sqlite3.connect(DB_NAME)
+    c = conn.cursor()
+    c.execute("SELECT id, name, email, dob, contact, age, gender FROM users WHERE email=?", (email,))
+    user = c.fetchone()
+    conn.close()
+
+    if not user:
+        return "User not found!"
+    return render_template("hostel.html", user=user)
 
 @app.route("/finance")
 def finance():
-    return render_template("finance.html")
+    email = request.args.get("email")
+    if not email:
+        return "No user specified!"
+
+    conn = sqlite3.connect(DB_NAME)
+    c = conn.cursor()
+    c.execute("SELECT id, name, email, dob, contact, age, gender FROM users WHERE email=?", (email,))
+    user = c.fetchone()
+    conn.close()
+
+    if not user:
+        return "User not found!"
+    return render_template("finance.html", user=user)
 
 
 if __name__ == "__main__":
