@@ -75,7 +75,7 @@
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+        <input type="password" name="password" id="password" pattern="(?=.*\d).{8,}" title="Enter a 8 digit password, must contain atleast 1 number" placeholder="Enter Your Password" required>
       </div>
       <button type="submit" class="btn">Login</button>
       <div class="switch-text">
