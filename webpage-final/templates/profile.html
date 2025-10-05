@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profile - SBV College</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<style>
-    .main-content {
-        margin-left: 220px;
-        padding: 30px;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 15px;
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    th, td {
-        border: 1px solid #ccc;
-        padding: 12px;
-        text-align: center;
-    }
-    th {
-        background: linear-gradient(90deg, #ff66b2, #4a90e2);
-        color: white;
-    }
-    tr:nth-child(even) { background: #f9f9f9; }
-</style>
-</head>
-<body>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile - VSB College</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <style>
+            .main-content {
+                margin-left: 220px;
+                padding: 30px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 12px;
+                text-align: center;
+            }
+            th {
+                background: linear-gradient(90deg, #ff66b2, #4a90e2);
+                color: white;
+            }
+            tr:nth-child(even) { background: #f9f9f9; }
+        </style>
+    </head>
 
-<div class="sidebar">
-    <h2>SBV College</h2>
-    <a href="{{ url_for('profile', email=user[2]) }}">Profile</a>
-    <a href="{{ url_for('academic', email=user[2]) }}">Academic</a>
-    <a href="{{ url_for('hostel', email=user[2]) }}">Hostel</a>
-    <a href="{{ url_for('finance', email=user[2]) }}">Finance</a>
-</div>
+    <body>
 
-<div class="main-content">
-    <h2>Profile Info</h2>
-    <table>
-        <tr>
-            <th>Student ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Date of Birth</th>
-            <th>Contact</th>
-            <th>Age</th>
-            <th>Gender</th>
-        </tr>
-        <tr>
-            <td>{{ user[0] }}</td>
-            <td>{{ user[1] }}</td>
-            <td>{{ user[2] }}</td>
-            <td>{{ user[3] }}</td>
-            <td>{{ user[4] }}</td>
-            <td>{{ user[5] }}</td>
-            <td>{{ user[6] }}</td>
-        </tr>
-    </table>
-</div>
+        <div class="sidebar">
+            <h2 style="text-decoration: underline;">VSB College</h2>
+            <a href="{{ url_for('profile', email=user[2]) }}">Profile</a>
+            <a href="{{ url_for('academic', email=user[2]) }}">Academic</a>
+            <a href="{{ url_for('hostel', email=user[2]) }}">Hostel</a>
+            <a href="{{ url_for('finance', email=user[2]) }}">Finance</a>
+        </div>
 
+        <div class="main-content">
+            <h2>Profile Info</h2>
+            <table>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Contact</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>{{ user[3] }}</td>
+                    <td>{{ user[4] }}</td>
+                    <td>{{ user[5] }}</td>
+                    <td>{{ user[6] }}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
 
-</body>
+    <footer>
+        <p>© 2025 Created by Vicky, Shriya, Balakrishna</p>
+    </footer>
+
 </html>
