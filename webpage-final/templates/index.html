@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBV College</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        .index-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        h1 {
-            margin-bottom: 30px;
-        }
-        .index-container a {
-            width: 150px;
-            text-align: center;
-            margin: 10px 0;
-            display: block;
-            padding: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-        .login-btn { background: #4a90e2; }
-        .login-btn:hover{background: #026eeb;}
-        .register-btn { background: #ff66b2; }
-        .register-btn:hover{background: #fd2390;}
-    </style>
-</head>
-<body>
-    <div class="index-container">
-        <h1 style="text-decoration: underline;">Welcome to SBV College</h1>
-        <a href="/login" class="login-btn">Login</a>
-        <a href="/register" class="register-btn">Register</a>
-    </div>
-</body>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VSB College</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <style>
+            .index-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                flex-direction: column;
+            }
+            h1 {
+                margin-bottom: 30px;
+            }
+            .index-container a {
+                width: 150px;
+                text-align: center;
+                margin: 10px 0;
+                display: block;
+                padding: 15px;
+                border-radius: 8px;
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+            .login-btn { background: #4a90e2; }
+            .login-btn:hover{background: #026eeb;}
+            .register-btn { background: #ff66b2; }
+            .register-btn:hover{background: #fd2390;}
+        </style>
+    </head>
+
+    <body>
+        <div class="index-container">
+            <h1 style="text-decoration: underline;">Welcome to VSB College</h1>
+            <a href="/login" class="login-btn">Login</a>
+            <a href="/register" class="register-btn">Register</a>
+        </div>
+    </body>
+
+    <footer>
+        <p>© 2025 Created by Vicky, Shriya, Balakrishna</p>
+    </footer>
+
 </html>
