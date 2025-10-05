@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Academic - SBV College</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
 
-<div class="sidebar">
-    <h2>SBV College</h2>
-    <a href="{{ url_for('profile', email=user[2]) }}">Profile</a>
-    <a href="{{ url_for('academic', email=user[2]) }}">Academic</a>
-    <a href="{{ url_for('hostel', email=user[2]) }}">Hostel</a>
-    <a href="{{ url_for('finance', email=user[2]) }}">Finance</a>
-</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Academic - VSB College</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    
+    <body>
 
-<div class="main-content">
-    <h2>Academic Info</h2>
-    <p><b>Student ID: </b>{{user[0]}}</p>
-    <p><b>Name: </b>{{user[1]}}</p>
-    <p><b>Course: </b>BSc Computer Science</p>
-    <p><b>Year: </b>1</p>
+        <div class="sidebar">
+            <h2 style="text-decoration: underline;">VSB College</h2>
+            <a href="{{ url_for('profile', email=user[2]) }}">Profile</a>
+            <a href="{{ url_for('academic', email=user[2]) }}">Academic</a>
+            <a href="{{ url_for('hostel', email=user[2]) }}">Hostel</a>
+            <a href="{{ url_for('finance', email=user[2]) }}">Finance</a>
+        </div>
 
-    <table>
-        <tr><th>Internal</th><th>Semester</th><th>Assignment</th><th>Project</th><th>Total</th></tr>
-        <tr><td>80</td><td>85</td><td>90</td><td>95</td><td>87.5</td></tr>
-    </table>
+        <div class="main-content">
+            <h2>Academic Info</h2>
+            <p><b>Student ID: </b>{{user[0]}}</p>
+            <p><b>Name: </b>{{user[1]}}</p>
+            <p><b>Course: </b>BSc Computer Science</p>
+            <p><b>Year: </b>1</p>
 
-    <p><b>Teacher's Feedback:</b> Excellent</p>
-    <p><b>Extra Activities:</b> Basketball</p>
-</div>
+            <table>
+                <tr><th>Internal</th><th>Semester</th><th>Assignment</th><th>Project</th><th>Total</th></tr>
+                <tr><td>80</td><td>85</td><td>90</td><td>95</td><td>87.5</td></tr>
+            </table>
 
-</body>
+            <p><b>Teacher's Feedback:</b> Excellent</p>
+            <p><b>Extra Activities:</b> Basketball</p>
+        </div>
+
+    </body>
+
+    <footer>
+        <p>© 2025 Created by Vicky, Shriya, Balakrishna</p>
+    </footer>
+    
 </html>
